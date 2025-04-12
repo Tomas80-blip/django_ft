@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="lt">
+<head>
+    <meta charset="UTF-8">
+    <title>Registracija į renginį</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 2rem; }
+        form { max-width: 400px; }
+        input, button { display: block; margin-top: 10px; padding: 8px; width: 100%; }
+        .errorlist { color: red; list-style: none; padding-left: 0; }
+    </style>
+</head>
+<body>
+    <h1>Registracija į renginį</h1>
+
+    <form method="POST">
+        {% csrf_token %}
+        {{ form.non_field_errors }}
+
+        <label for="id_vardas">Vardas:</label>
+        {{ form.vardas }}
+        {{ form.vardas.errors }}
+
+        <label for="id_el_pastas">El. paštas:</label>
+        {{ form.el_pastas }}
+        {{ form.el_pastas.errors }}
+
+        <button type="submit">Registruotis</button>
+    </form>
+
+    <p>Peržiūrėti <a href="{% url 'dalyviai' %}">dalyvių sąrašą</a></p>
+</body>
+</html>

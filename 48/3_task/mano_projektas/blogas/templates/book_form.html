@@ -1,0 +1,7 @@
+<h1>Pridėti naują knygą</h1>
+<form method="post">
+  {% csrf_token %}
+  {{ form.as_p }}
+  <button type="submit">Pridėti</button>
+</form>
+<a href="/">Grįžti</a>

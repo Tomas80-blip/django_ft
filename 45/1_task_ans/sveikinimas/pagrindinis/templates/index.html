@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Pagrindinis</title>
+</head>
+<body>
+    {% if user.is_authenticated %}
+    <h1>Sveiki, {{ user.username }}!</h1>
+    <form method="post" action="{% url 'logout' %}">
+        {% csrf_token %}
+        <button type="submit">Atsijungti</button>
+    </form>
+    {% else %}
+    <h1>Sveiki, svecias!</h1>
+    <a href="{% url 'login' %}">Prisijungti</a>
+    <a href="{% url 'register' %}">Registruotis</a>
+    {% endif %}
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Knygos</title>
+</head>
+<body>
+<h1>Knygu sarasas</h1>
+
+<form method="get">
+    <input type="text" name="q" placeholder="Ieskoti pagal pavadinima ar autoriu" value="{{ query }}">
+    <button type="submit">Ieskoti</button>
+</form>
+
+<hr>
+
+{% for book in page_obj %}
+<h2>{{ book.title }}</h2>
+<p><strong>Autorius:</strong> {{ book.author }}</p>
+<p>{{ book.description }}</p>
+
+<hr>
+
+{% empty %}
+<p>Knygu nerasta.</p>
+{% endfor %}
+
+<div>
+    {% if page_obj.has_previous %}
+    <a href="?{% if query %}q={{ query }}&{% endif %}page={{ page_obj.previous_page_number }}">Ankstesnis</a>
+    {% endif %}
+
+    <span>Puslapis {{ page_obj.number }} is {{ page_obj.paginator.num_pages }}</span>
+
+    {% if page_obj.has_next %}
+    <a href="?{% if query %}q={{ query }}&{% endif %}page={{ page_obj.next_page_number }}">Kitas</a>
+    {% endif %}
+</div>
+</body>
+</html>

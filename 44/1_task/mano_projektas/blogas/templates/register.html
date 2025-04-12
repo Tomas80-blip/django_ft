@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Registracija i rengini</title>
+</head>
+<body>
+    <h1>Registracija i rengini</h1>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Registruotis</button>
+    </form>
+
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>New feedback</title>
+</head>
+<body>
+    <h1>Palikite atsiliepima</h1>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Siusti</button>
+    </form>
+<!--# eroru apdorojimas-->
+    {% if form.errors %}
+        <ul>
+            {% for field in form %}
+                {% for error in field.errors %}
+<!--                #jei fielduose erorai, tai juos atvaizduoja-->
+                    <li>{{ field.label }}: {{ error }}</li>
+<!--                 # pasiimam field'o label'i ir atvaizduojam eror'a-->
+                {% endfor %}
+            {% endfor %}
+        </ul>
+    {% endif %}
+
+</body>
+</html>

@@ -1,0 +1,11 @@
+{% extends "vartotojai/baze.html" %}
+{% block content %}
+    {% if user.is_authenticated %}
+        <h2>Sveiki, {{ user.username }}!</h2>
+        <a href="{% url 'atsijungti' %}">Atsijungti</a>
+    {% else %}
+        <h2>Sveiki, svečias!</h2>
+        <a href="{% url 'prisijungti' %}">Prisijungti</a> |
+        <a href="{% url 'registracija' %}">Registruotis</a>
+    {% endif %}
+{% endblock %}

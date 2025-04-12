@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Autorius</title>
+    </head>
+    <body>
+        <h1>Autorius: {{ vardas }}</h1>
+        <h2>Pomegiai:</h2>
+        <ul>
+            {% for p in pomegiai%}
+                <li>{{p}}</li>
+            {% endfor%}
+
+
+        </ul>
+    </body>
+</html>

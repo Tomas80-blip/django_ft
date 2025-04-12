@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Pagrindinis</title>
+</head>
+<body>
+<h1>Pagrindinis puslapis</h1>
+{% if user.is_authenticated %}
+    <p>Sveiki, {{ user.username }}!</p>
+    <a href="{% url 'slaptas' %}">Slaptas puslapis</a> |
+    <a href="{% url 'atsijungti' %}">Atsijungti</a>
+{% else %}
+    <p>Sveiki, svečias!</p>
+    <a href="{% url 'prisijungti' %}">Prisijungti</a> |
+    <a href="{% url 'registracija' %}">Registruotis</a>
+{% endif %}
+</body>
+</html>

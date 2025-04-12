@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Feedback list</title>
+</head>
+<body>
+    <h1>Gauti atsiliepimai</h1>
+    <ul>
+        {% for item in atsiliepimai %}
+            <li>
+                <strong>{{ item.vardas }}</strong> ({{ item.el_pastas }})<br>
+                {{ item.zinute }}<br>
+                <em>{{ item.sukurta }}</em>
+            </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>

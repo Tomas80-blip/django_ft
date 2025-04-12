@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Naujas irasas</title>
+</head>
+<body>
+    <h1>Froma</h1>
+    <form method="post">
+        {% csrf_token %}
+<!--    #privaloma django apsauga nuo padirbtu formu-->
+        {{ form.as_p }}
+<!--     # formos laukai rodomi kaip paragrafai-->
+        <button type="submit">Issaugoti</button>
+    </form>
+</body>
+</html>

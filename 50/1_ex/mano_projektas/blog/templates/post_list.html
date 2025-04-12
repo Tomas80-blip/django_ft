@@ -1,0 +1,9 @@
+<h1>Irasai</h1>
+
+<ul>
+    {% for post in posts %}
+    <li>{{ post.title }}</li>
+    {% endfor %}
+</ul>
+
+<a href="{% url 'post_create' %}">Naujas irasas</a>

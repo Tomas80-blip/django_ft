@@ -1,0 +1,9 @@
+{% extends "vartotojai/baze.html" %}
+{% block content %}
+    <h2>Registracija</h2>
+    <form method="post">
+        {% csrf_token %}
+        {{ forma.as_p }}
+        <button type="submit">Registruotis</button>
+    </form>
+{% endblock %}

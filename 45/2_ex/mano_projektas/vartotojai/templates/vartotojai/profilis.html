@@ -1,0 +1,10 @@
+{% extends 'vartotojai/base.html' %}
+{% block title %}Profilis{% endblock %}
+{% block content %}
+<h2>Jusu profilis</h2>
+<ul class="list-group mt-3">
+    <li class="list-group-item">Vartotojo vardas: <strong>{{ user.username }}</strong></li>
+    <li class="list-group-item">Vardas: <strong>{{ profilis.full_name }}</strong></li>
+</ul>
+<a href="{% url 'redaguoti_profili' %}" class="btn btn-outline-warning mt-3">Redaguoti profili</a>
+{% endblock %}

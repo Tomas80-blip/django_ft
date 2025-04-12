@@ -1,0 +1,11 @@
+
+
+<h1>Article</h1>
+
+<form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Issaugoti</button>
+</form>
+
+<a href="{% url 'article_list' %}">Atgal</a>

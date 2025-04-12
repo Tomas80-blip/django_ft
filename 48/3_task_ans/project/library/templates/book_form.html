@@ -1,0 +1,11 @@
+
+
+<h1>Prideti knyga</h1>
+
+<form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Issaugoti</button>
+</form>
+
+<a href="{% url 'book_list' %}">Atgal</a>

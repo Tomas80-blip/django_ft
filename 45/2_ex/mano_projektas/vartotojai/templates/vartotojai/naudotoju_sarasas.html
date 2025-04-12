@@ -1,0 +1,10 @@
+{% extends 'vartotojai/base.html' %}
+{% block title %}Naudotoju sarasas{% endblock %}
+{% block content %}
+<h2>Naudotoju sarasas</h2>
+<ul class="list-group mt-3">
+    {% for naud in vartotojai %}
+    <li class="list-group-iten">{{ naud.user.username }} - {{ naud.full_name }}</li>
+    {% endfor %}
+</ul>
+{% endblock %}

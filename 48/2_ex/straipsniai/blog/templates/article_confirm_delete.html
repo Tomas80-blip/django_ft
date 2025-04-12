@@ -1,0 +1,11 @@
+
+
+<h1>Ar tikrai norite istrinti si straipsni?</h1>
+<p>{{ article.title }}</p>
+
+<form method="post">
+    {% csrf_token %}
+    <button type="submit">Taip, istrinti</button>
+</form>
+
+<a href="{% url 'article_detail' article.pk %}">Grizti</a>

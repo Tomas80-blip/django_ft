@@ -1,0 +1,12 @@
+<h1>Knygu sarasas</h1>
+
+<ul>
+    {% for book in books %}
+    <li>
+        <a href="{% url 'book_detail' book.pk %}">{{ book.title }}</a>
+        - {{ book.author }}
+    </li>
+    {% endfor %}
+</ul>
+
+<a href="{% url 'book_create' %}">Prideti nauja knyga</a>

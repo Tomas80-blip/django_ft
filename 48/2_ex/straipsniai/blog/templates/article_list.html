@@ -1,0 +1,14 @@
+
+<h1>Straipsniu sarasas</h1>
+<p>{{ message }}</p>
+
+<ul>
+    {% for article in articles %}
+    <li>
+        <a href="{% url 'article_detail' article.pk %}">{{ article.title }}</a>
+        <small>{{ article.created_at }}</small>
+    </li>
+    {% endfor %}
+</ul>
+
+<a href="{% url 'article_create' %}">Naujas straipsnis</a>

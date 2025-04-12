@@ -1,0 +1,9 @@
+<h1>Knygų sąrašas</h1>
+<ul>
+  {% for book in books %}
+    <li><a href="{{ book.id }}/">{{ book.title }}</a> - {{ book.author }}</li>
+  {% empty %}
+    <li>Nėra knygų.</li>
+  {% endfor %}
+</ul>
+<a href="prideti/">Pridėti knygą</a>

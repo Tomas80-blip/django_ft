@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Dalyviu sarasas</title>
+</head>
+<body>
+    <h1>Dalyviu saras</h1>
+    <ul>
+        {% for vartotojas in vartotojai %}
+            <li>
+                <strong>{{ vartotojas.vardas }}</strong> ({{ vartotojas.email }})<br>
+                <em>{{ vartotojas.sukurta }}</em>
+            </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>

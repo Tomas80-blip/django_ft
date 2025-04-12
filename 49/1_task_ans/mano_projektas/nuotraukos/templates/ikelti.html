@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Ikelti paveiksleli</title>
+</head>
+<body>
+<h2>Ikelti paveiksleli</h2>
+<form method="POST" enctype="multipart/form-data">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Ikelti</button>
+</form>
+
+{% if paveikslelis %}
+<h3>Ikeltas paveikslelis</h3>
+<img src="{{ paveikslelis.paveikslelis.url }}" width="300">
+{% endif %}
+</body>
+</html>

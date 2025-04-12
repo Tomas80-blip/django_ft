@@ -1,0 +1,13 @@
+
+
+<h1>{{ article.title }}</h1>
+<p>{{ article.content }}</p>
+
+<small>Sukurta: {{ article.created_at }}</small>
+
+<br>
+<br>
+
+<a href="{% url 'article_update' article.pk %}">Redaguoti</a>
+<a href="{% url 'article_delete' article.pk %}">Istrinti</a>
+<a href="{% url 'article_list' %}">Atgal i sarasa</a>

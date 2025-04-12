@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Profilis</title>
+</head>
+<body>
+<h2>Profilio nuotrauka</h2>
+<form method="POST" enctype="multipart/form-data">
+    {% csrf_token %}
+    {{ forma.as_p }}
+    <button type="submit">Issaugoti</button>
+</form>
+
+<!-- jei useris jau tures profilio nuotrauka tai mes noresime ja atvaizduoti-->
+{% if user.profile.profile_picture %}
+    <img src="{{ user.profile.profile_picture.url }}" width="200"/>
+{% endif %}
+</body>
+</html>

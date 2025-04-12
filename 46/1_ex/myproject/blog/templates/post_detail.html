@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Post</title>
+</head>
+<body>
+    <h1>{{ post.title }}</h1>
+    <p>{{ post.content }}</p>
+
+    <h3>Kategorijos:</h3>
+    <ul>
+        {% for category in post.categories.all %}
+        <li>{{ category.name }}</li>
+        {% empty %}
+        <li>Nera kategoriju</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
